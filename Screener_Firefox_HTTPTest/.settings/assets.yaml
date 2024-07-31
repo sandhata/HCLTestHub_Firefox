@@ -1,0 +1,58 @@
+name: Screener_Firefox_HTTPTest
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /Screener_Firefox_HTTPTest/src
+        type: javaClasspath
+  - name: ScreenerBrowser.recdata
+  - name: ScreenerBrowser.recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /Screener_Firefox_HTTPTest/ScreenerBrowser.recdata
+        type: recsessionRecdata
+  - name: ScreenerBrowser.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 11.0.0.0
+    properties: 
+      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1EF4F11629142A0D729B16464353066
+    dependencies: 
+      - path: /Screener_Firefox_HTTPTest/ScreenerBrowser.recsession
+        type: testRecsession
+  - name: ScreenerBrowser_1722412187323.stats
+    type: com.ibm.rational.test.lt.stats.session
+    properties: 
+      startTime: 1722412187323
+      tags: 
+      testId: A1EF4F11629142A0D729B16464353066
+      testName: ScreenerBrowser
+    dependencies: 
+      - path: /Screener_Firefox_HTTPTest/ScreenerBrowser.testsuite
+        type: statsSessionTest
+      - path: /Screener_Firefox_HTTPTest/ScreenerBrowser_1722412187323_orch!system.mstats
+        type: statsSessionStore
+      - path: /Screener_Firefox_HTTPTest/ScreenerBrowser_1722412187323_orch!system.rstats
+        type: statsSessionStore
+      - path: /Screener_Firefox_HTTPTest/ScreenerBrowser_1722412187323_perf!localhost.mstats
+        type: statsSessionStore
+      - path: /Screener_Firefox_HTTPTest/ScreenerBrowser_1722412187323_perf!localhost.rstats
+        type: statsSessionStore
+      - path: /Screener_Firefox_HTTPTest/ScreenerBrowser_1722412188398.executiondlr
+        type: statsSessionAsset
+  - name: ScreenerBrowser_1722412187323_orch!system.mstats
+  - name: ScreenerBrowser_1722412187323_orch!system.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: ScreenerBrowser_1722412187323_perf!localhost.mstats
+  - name: ScreenerBrowser_1722412187323_perf!localhost.rstats
+    type: com.ibm.rational.test.lt.stats.raw
+  - name: ScreenerBrowser_1722412188398.executiondlr
+  - name: src
+    resources: 
+      - name: test
+        resources: 
+          - name: ScreenerBrowser_Test_A1EF4F11629142A0D729B16464353066.java
+            type: com.ibm.rational.test.lt.generatedCode
